@@ -3,9 +3,9 @@ package ubu.gii.dass.refactoring;
 /**
 * Tema  Refactorizaciones 
 *
-* Ejemplo de aplicación de refactorizaciones. Actualizado para colecciones genéricas de java 1.5
+* Ejemplo de aplicaciï¿½n de refactorizaciones. Actualizado para colecciones genï¿½ricas de java 1.5
 *
-* @author M. Fowler y <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
+* @author M. Fowler y <A HREF="mailto:clopezno@ubu.es">Carlos Lï¿½pez</A>
 * @version 1.1
 * @see java.io.File
 *
@@ -57,24 +57,24 @@ public class Customer {
 		return result;
 	}
 
-	private double amountFor(Rental each) {
-		double thisAmount = 0;
+	private double amountFor(Rental aRental) {
+		double result = 0;
 		// determine amounts for each line
-		switch (each.getMovie().getPriceCode()) {
+		switch (aRental.getMovie().getPriceCode()) {
 		case Movie.REGULAR:
-			thisAmount += 2;
-			if (each.getDaysRented() > 2)
-				thisAmount += (each.getDaysRented() - 2) * 1.5;
+			result += 2;
+			if (aRental.getDaysRented() > 2)
+				result += (aRental.getDaysRented() - 2) * 1.5;
 			break;
 		case Movie.NEW_RELEASE:
-			thisAmount += each.getDaysRented() * 3;
+			result += aRental.getDaysRented() * 3;
 			break;
 		case Movie.CHILDRENS:
-			thisAmount += 1.5;
-			if (each.getDaysRented() > 3)
-				thisAmount += (each.getDaysRented() - 3) * 1.5;
+			result += 1.5;
+			if (aRental.getDaysRented() > 3)
+				result += (aRental.getDaysRented() - 3) * 1.5;
 			break;
 		}
-		return thisAmount;
+		return result;
 	}
 }
