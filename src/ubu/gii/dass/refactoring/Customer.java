@@ -72,7 +72,7 @@ public class Customer {
 		Enumeration<Rental> rentals = _rentals.elements();
 		while (rentals.hasMoreElements()) {
 			Rental each = rentals.nextElement();
-			result = each.getCharge();
+			result += each.getCharge();
 		}
 		return result;
 	}
@@ -82,7 +82,7 @@ public class Customer {
 		Enumeration<Rental> rentals = _rentals.elements();
 		while (rentals.hasMoreElements()) {
 			Rental each = rentals.nextElement();
-			result = each.getFrequentRenterPoints();
+			result += each.getFrequentRenterPoints();
 		}
 		return result;
 	}
