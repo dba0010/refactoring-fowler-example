@@ -1,6 +1,5 @@
 package ubu.gii.dass.refactoring;
 
-
 public class Aplicacion {
 
 	public static void main(String[] arg) {
@@ -20,6 +19,7 @@ public class Aplicacion {
 		c1.addRental(r3);
 
 		System.out.println(c1.statement());
+		System.out.println(c1.htmlStatement());
 
 	}
 
