@@ -31,23 +31,31 @@ public class Customer {
 	};
 
 	public String statement() {
-		double totalAmount = 0;
-		String result = "Rental Record for " + getName() + "\n";
 		Enumeration<Rental> rentals = _rentals.elements();
+		String result = "Rental Record for " + getName() + "\n";
+		
 		while (rentals.hasMoreElements()) {
 			Rental each = rentals.nextElement();
-			double thisAmount = 0;
-			thisAmount = each.getCharge();
-			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t"
-					+ String.valueOf(thisAmount) + "\n";
-			totalAmount += thisAmount;
+					+ String.valueOf(each.getCharge()) + "\n";
+			
 		}
+		
 		// add footer lines
-		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
 		result += "You earned "
 				+ String.valueOf(getTotalFrequentRenterPoints())
 				+ " frequent renter points";
+		return result;
+	}
+
+	private double getTotalCharge() {
+		double result =0;
+		Enumeration<Rental> rentals = _rentals.elements();
+		while (rentals.hasMoreElements()) {
+			Rental each = rentals.nextElement();
+			result = each.getCharge();
+		}
 		return result;
 	}
 
