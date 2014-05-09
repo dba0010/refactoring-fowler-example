@@ -8,6 +8,10 @@ public class RegularPrice extends Price {
 	}
 	
 	public double getCharge(Movie movie, int daysRented){
+		return getCharge(daysRented);
+	}
+
+	public double getCharge(int daysRented){
 		double result = 0;
 		result += 2;
 		if (daysRented > 2)

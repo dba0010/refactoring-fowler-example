@@ -8,6 +8,10 @@ public class ChildrenPrice extends Price {
 	}
 
 	public double getCharge(Movie movie, int daysRented){
+		return getCharge(daysRented);
+	}
+
+	public double getCharge(int daysRented){
 		double result = 0;
 		result += 1.5;
 		if (daysRented > 3)
