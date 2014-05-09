@@ -32,7 +32,7 @@ public class Rental {
 	}
 
 	public int getFrequentRenterPoints() {
-		return _movie.getFrequentRenterPoints(_daysRented);
+		return _movie._priceCode.getFrequentRenterPoints(_movie, _daysRented);
 	}
 
 }
